@@ -433,7 +433,7 @@ abnormal具体含义定义:
 	HEADER:
 	HTTP_TYPE: beat	
 	BODY:
-	[{"SN":"设备唯一id","MAC":"mac地址",Device:[{"Addr":"00","GAP":"0060"}]}]	
+	[{"SN":"设备唯一id","MAC":"mac地址", "ICCID":"SIM卡卡号", Device:[{"Addr":"00","GAP":"0060"}]}]	
 
 	RESPONSE:
 	ERROR:1;00;GAP:0005;
@@ -691,3 +691,80 @@ abnormal具体含义定义:
 	成功 {"code":0,"channel":"","alarmStatus":"0:关闭；1:打开"}
 
 channel描述 --- state_push：异常状态app推送；data_push：异常数据app推送；state_mail，data_mail邮件推送；state_msm，data_msm短信推送；state_call，data_call电话推送；
+
+##  修改设备ICCID ##
+
+此API用于修改设备ICCID
+> POST
+
+	REQUEST:
+	POST
+	
+	HEADER:
+	HTTP_TYPE: setICCID
+	BODY:
+	{"user":"用户名","snaddr":"设备snaddr","iccid":"设备ICCID"}
+
+	RESPONSE:
+	{
+		"code":0,
+		"msg":"设备ICCID"
+	}
+
+##  获取设备ICCID ##
+
+此API用于获取设备ICCID
+> POST
+
+	REQUEST:
+	POST
+	
+	HEADER:
+	HTTP_TYPE: getICCID
+	BODY:
+	{"user":"用户名","snaddr":"设备snaddr"}
+
+	RESPONSE:
+	{
+		"code":0,
+		"iccid":"设备ICCID"
+	}
+
+##  设置设备计费过期时间 ##
+
+此API用于修改设备计费过期时间
+> POST
+
+	REQUEST:
+	POST
+	
+	HEADER:
+	HTTP_TYPE: setExpireTime
+	BODY:
+	{"user":"用户名","snaddr":"设备snaddr", "expireTime":"2022-01-01 12:12:12"}
+
+	RESPONSE:
+	{
+		"code":0,
+		"msg":"2022-01-10 12:00:00""
+	}
+
+
+##  获取设备计费过期时间##
+
+此API用于获取设备计费过期时间
+> POST
+
+	REQUEST:
+	POST
+	
+	HEADER:
+	HTTP_TYPE: getExpireTime
+	BODY:
+	{"user":"用户名","snaddr":"设备snaddr"}
+
+	RESPONSE:
+	{
+		"code":0,
+		"expireTime":"2022-01-10 12:00:00"
+	}
