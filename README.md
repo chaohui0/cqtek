@@ -768,3 +768,22 @@ channel描述 --- state_push：异常状态app推送；data_push：异常数据a
 		"code":0,
 		"expireTime":"2022-01-10 12:00:00"
 	}
+
+##  设置设备离线报警时长 ##
+
+此API用于设置设备离线报警的时长，目前只支持10分钟和1小时两种,longSwitch=1表示设置为1小时，longSwitch=0表示设置为10分钟，返回结果msg是设置的秒数
+> POST
+
+	REQUEST:
+	POST
+	
+	HEADER:
+	HTTP_TYPE: setOfflineThreshold
+	BODY:
+	{"user":"cqy222","snaddr":"W210NX01", "longSwitch": 1}
+
+	RESPONSE:
+	{
+		"code":0,
+		"msg": "3600"
+	}
