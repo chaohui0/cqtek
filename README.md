@@ -787,3 +787,22 @@ channel描述 --- state_push：异常状态app推送；data_push：异常数据a
 		"code":0,
 		"msg": "3600"
 	}
+
+##  服务端对设备主动下发控制消息 ##
+
+此API用于服务端对设备端主动下发控制消息
+> POST
+
+	REQUEST:
+	POST
+	
+	HEADER:
+	HTTP_TYPE: dataTransferCQ
+	BODY:
+	{"user":"cqy222","snaddr":"W210NX01", "content": "协议内容"}
+
+	RESPONSE:
+	{
+		"code":0,
+		"msg": "success"
+	}
