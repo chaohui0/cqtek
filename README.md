@@ -138,7 +138,7 @@ HTTP Header中必须包含`Api-Key`和`Api-Domain`,其中`Api-Key`为企业超�
 	
 
 	RESPONSE:
-	成功｛"code":0,"mail":"cqtek1234@126.com","login_time":"2022-11-24 10:00:00"｝
+	成功｛"code":0,"mail":"cqtek1234@126.com","lastLoginTime":"2022-11-24 10:00:00"｝
 	失败｛"code":1,"msg":"failed"｝
 	
 
