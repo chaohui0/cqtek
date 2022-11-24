@@ -261,6 +261,45 @@ abnormal具体含义定义:
 	
 注解： 为数组形式
 
+## 增加分组 ##
+
+调用此API，用户可以增加设备分组。
+
+> POST
+
+	REQUEST:
+	POST
+	
+	HEADER:
+	HTTP_TYPE: addAreaInfo	
+	BODY:
+	{"user":"xsf","area":"机房"}
+	
+
+	RESPONSE:
+	{"code":1,"msg":"原因"}
+	
+注解： 操作成功返回code= 0，操作失败返回 code= 1,msg = 操作失败的原因
+
+## 删除分组 ##
+
+调用此API，用户可以删除设备分组。
+
+> POST
+
+	REQUEST:
+	POST
+	
+	HEADER:
+	HTTP_TYPE: delAreaInfo	
+	BODY:
+	{"user":"xsf","area":"机房"}
+	
+
+	RESPONSE:
+	{"code":1,"msg":"原因"}
+	
+注解： 操作成功返回code= 0，操作失败返回 code= 1,msg = 操作失败的原因
 
 ## 设备分组修改 ##
 
