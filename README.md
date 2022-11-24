@@ -14,7 +14,7 @@
 	POST
 	
 	HEADER:
-	HTTP_TYPE: login
+	TYPE: login
 
 	BODY:
 	{"user":"test","password":"password"}
@@ -70,7 +70,7 @@ HTTP Header中必须包含`Api-Key`和`Api-Domain`,其中`Api-Key`为企业超�
 	POST
 	
 	HEADER:
-	HTTP_TYPE: modifyPass
+	TYPE: modifyPass
 	
 	BODY:
 	{"user":"xsf" ,"oldPass":"xsf123","newPass":"321xsf"}
@@ -91,7 +91,7 @@ HTTP Header中必须包含`Api-Key`和`Api-Domain`,其中`Api-Key`为企业超�
 	POST
 	
 	HEADER:
-	HTTP_TYPE: retrievePass
+	TYPE: retrievePass
 	
 	BODY:
 	{"user":"xsf" }
@@ -111,7 +111,7 @@ HTTP Header中必须包含`Api-Key`和`Api-Domain`,其中`Api-Key`为企业超�
 	POST
 	
 	HEADER:
-	HTTP_TYPE: bindMailbox
+	TYPE: bindMailbox
 	
 	BODY:
 	{"user":"xsf","mail":"cqtek1234@126.com" }
@@ -131,7 +131,7 @@ HTTP Header中必须包含`Api-Key`和`Api-Domain`,其中`Api-Key`为企业超�
 	POST
 	
 	HEADER:
-	HTTP_TYPE:  userInfo
+	TYPE:  userInfo
 	
 	BODY:
 	{"user":"xsf"}
@@ -157,7 +157,7 @@ HTTP Header中必须包含`Api-Key`和`Api-Domain`,其中`Api-Key`为企业超�
 	POST
 	
 	HEADER:
-	HTTP_TYPE: getAllDevice
+	TYPE: getAllDevice
 	
 	BODY:
 	{"user":"test"}	
@@ -178,7 +178,7 @@ HTTP Header中必须包含`Api-Key`和`Api-Domain`,其中`Api-Key`为企业超�
 	POST
 	
 	HEADER:
-	HTTP_TYPE: getThreshold
+	TYPE: getThreshold
 	
 	BODY:
 	{"snaddr":"设备唯一id" }
@@ -198,7 +198,7 @@ HTTP Header中必须包含`Api-Key`和`Api-Domain`,其中`Api-Key`为企业超�
 	POST
 	
 	HEADER:
-	HTTP_TYPE: modifyTH
+	TYPE: modifyTH
 	
 	BODY:
 	{"snaddr":"设备唯一id","maxTemp":最高温度，"minTemp"：最低温度，"maxHumi"：最大湿度，"minHumi"：最小湿度，"tempHC":温度回差,"humiHC":湿度回差}
@@ -221,7 +221,7 @@ HTTP Header中必须包含`Api-Key`和`Api-Domain`,其中`Api-Key`为企业超�
 	POST
 	
 	HEADER:
-	HTTP_TYPE: getRTData
+	TYPE: getRTData
 	
 	BODY:
 	{"snaddr":"设备唯一id","curve":"allLast"}
@@ -251,7 +251,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: getAreaInfo	
+	TYPE: getAreaInfo	
 	BODY:
 	{"user":"xsf"}
 	
@@ -271,7 +271,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: addAreaInfo	
+	TYPE: addAreaInfo	
 	BODY:
 	{"user":"xsf","area":"机房"}
 	
@@ -291,7 +291,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: delAreaInfo	
+	TYPE: delAreaInfo	
 	BODY:
 	{"user":"xsf","area":"机房"}
 	
@@ -311,7 +311,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: setAreaInfo	
+	TYPE: setAreaInfo	
 	BODY:
 	{"user":"xsf","oldArea":"机房"，"newArea":"新机房"}
 	
@@ -330,7 +330,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: getDevInfo
+	TYPE: getDevInfo
 	BODY:
 	{"snaddr":"设备唯一id"}
 	
@@ -349,7 +349,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: setDevName	
+	TYPE: setDevName	
 	BODY:
 	{"snaddr":"设备唯一id"，"devName":"设备名称"}
 	
@@ -369,7 +369,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: setDevArea	
+	TYPE: setDevArea	
 	BODY:
 	{"snaddr":"设备唯一id"，"area":"机房"}
 	
@@ -388,7 +388,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: modifyDeviceGap	
+	TYPE: modifyDeviceGap	
 	BODY:
 	{"snaddr":"设备唯一id","devGap":"60"}
 	
@@ -407,7 +407,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: addDevice	
+	TYPE: addDevice	
 	BODY:
 	{"mac":"mac地址","user":"test"}
 	
@@ -427,7 +427,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: addDeviceBySN	
+	TYPE: addDeviceBySN	
 	BODY:
 	{"snaddr":"snaddr地址","user":"test","ac":"ac码","devName":"设备名称，选填参数"}
 	
@@ -450,7 +450,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: delDevice	
+	TYPE: delDevice	
 	BODY:
 	{"snaddr":"设备唯一id","user":"test"}
 	
@@ -470,7 +470,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: beat	
+	TYPE: beat	
 	BODY:
 	[{"SN":"设备唯一id","MAC":"mac地址", "ICCID":"SIM卡卡号", Device:[{"Addr":"00","GAP":"0060"}]}]	
 
@@ -487,7 +487,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: setTemp
+	TYPE: setTemp
 	BODY:
 	{"snaddr":"snaddr地址","temp":"温度值"}
 
@@ -505,7 +505,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: setHumi
+	TYPE: setHumi
 	BODY:
 	{"snaddr":"snaddr地址","humi":"湿度值"}
 
@@ -523,7 +523,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: setRealAlarm	
+	TYPE: setRealAlarm	
 	BODY:
 	BODY:	
 	{"snaddr":"snaddr地址","alarm":"0或者1"}
@@ -542,7 +542,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: getDevAuthority	
+	TYPE: getDevAuthority	
 	BODY:
 	BODY:	
 	{"snaddr":"snaddr地址"}
@@ -562,7 +562,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: re_put
+	TYPE: re_put
 	BODY:
 	[{"SN":"设备唯一id","Time":"16-01-01 19:00",Device:[{"Addr":"00","Temp":28667,"Humi":5020,"IN1":"0000"}]}]	
 
@@ -579,7 +579,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: getAccountErr
+	TYPE: getAccountErr
 	BODY:
 	{"user":"xsf"}
 
@@ -616,7 +616,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: getDeviceErr
+	TYPE: getDeviceErr
 	BODY:
 	{"snaddr":"设备唯一id","startTime":"起始时间","endTime":"结束时间"}
 
@@ -642,7 +642,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: getHisData
+	TYPE: getHisData
 	BODY:
 	{"snaddr":"设备唯一id","startTime":"起始时间","endTime":"结束时间","rangeTime":"间隔时间"}
 
@@ -662,7 +662,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: setAndroidDevToken
+	TYPE: setAndroidDevToken
 	BODY:
 	{"user":"用户名","token":"设备token"}
 
@@ -681,7 +681,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: setNodeId
+	TYPE: setNodeId
 	BODY:
 	{"user":"用户名","snaddr":"设备snaddr","nodeId":"待绑定nodeId"}
 
@@ -702,7 +702,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: getDeviceSet
+	TYPE: getDeviceSet
 	BODY:
 	{"snaddr":"设备唯一id","user":"用户名"}
 	
@@ -721,7 +721,7 @@ abnormal具体含义定义:
 	POST
 	
 	HEADER:
-	HTTP_TYPE: switchAlarmChannel
+	TYPE: switchAlarmChannel
 	BODY:
 	{"accessToken":"token","user":"用户名","channel":"","alarmStatus":"0:关闭；1:打开"}
 	
@@ -740,7 +740,7 @@ channel描述 --- state_push：异常状态app推送；data_push：异常数据a
 	POST
 	
 	HEADER:
-	HTTP_TYPE: setICCID
+	TYPE: setICCID
 	BODY:
 	{"user":"用户名","snaddr":"设备snaddr","iccid":"设备ICCID"}
 
@@ -759,7 +759,7 @@ channel描述 --- state_push：异常状态app推送；data_push：异常数据a
 	POST
 	
 	HEADER:
-	HTTP_TYPE: getICCID
+	TYPE: getICCID
 	BODY:
 	{"user":"用户名","snaddr":"设备snaddr"}
 
@@ -778,7 +778,7 @@ channel描述 --- state_push：异常状态app推送；data_push：异常数据a
 	POST
 	
 	HEADER:
-	HTTP_TYPE: setExpireTime
+	TYPE: setExpireTime
 	BODY:
 	{"user":"用户名","snaddr":"设备snaddr", "expireTime":"2022-01-01 12:12:12"}
 
@@ -798,7 +798,7 @@ channel描述 --- state_push：异常状态app推送；data_push：异常数据a
 	POST
 	
 	HEADER:
-	HTTP_TYPE: getExpireTime
+	TYPE: getExpireTime
 	BODY:
 	{"user":"用户名","snaddr":"设备snaddr"}
 
@@ -817,7 +817,7 @@ channel描述 --- state_push：异常状态app推送；data_push：异常数据a
 	POST
 	
 	HEADER:
-	HTTP_TYPE: setOfflineThreshold
+	TYPE: setOfflineThreshold
 	BODY:
 	{"user":"cqy222","snaddr":"W210NX01", "longSwitch": 1}
 
@@ -836,7 +836,7 @@ channel描述 --- state_push：异常状态app推送；data_push：异常数据a
 	POST
 	
 	HEADER:
-	HTTP_TYPE: dataTransferCQ
+	TYPE: dataTransferCQ
 	BODY:
 	{"user":"cqy222","snaddr":"W210NX01", "content": "协议内容"}
 
