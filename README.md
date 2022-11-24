@@ -866,3 +866,112 @@ channel描述 --- state_push：异常状态app推送；data_push：异常数据a
 		"code":0,
 		"msg": "success"
 	}
+
+##  生成报告接口 ##
+
+此API用于生成设备报告
+> POST
+
+	REQUEST:
+	POST
+	
+	HEADER:
+	TYPE: createReport
+	BODY:
+	{"snaddr":"W210NX01", "report_content": {"start_time":"2022-10-20 10:00:00","end_time":"2022-10-20 10:00:00","gap":"间隔分钟数","mode":"打印模式"},"user_content":{"公司名称":"公司名称","货品名称":"货品名称","出货单号":"出货单号","配送方":"配送方","接收方":"接收方","其他key":"其他value"}}
+
+	RESPONSE:
+	{
+		"code":0,
+		"msg": "success",
+		"report_id": "程序自动生成的唯一报告id"
+	}
+
+接口描述 --- 上传参数report_content字段中的所有参数是后台服务在生成数据报告中需要使用的，因此key固定为start_time，end_time，gap，mode四个，user_content字段中保存用户手动输入内容，key和value后台只保存并将原始数据返回，客户端自定义上传数据内容
+
+
+##  获取报告基本信息接口 ##
+
+此API用于查询单条设备报告基本信息
+> POST
+
+	REQUEST:
+	POST
+	
+	HEADER:
+	TYPE: getReportByReportId
+	BODY:
+	{"snaddr":"W210NX01", "report_id":"程序自动生成的唯一报告id"}
+
+	RESPONSE:
+	{
+		"code":0,
+		"msg": "success",
+		"report_content": {"start_time":"2022-10-20 10:00:00","end_time":"2022-10-20 10:00:00","gap":"间隔分钟数","mode":"打印模式"},
+		"user_content":{"公司名称":"公司名称","货品名称":"货品名称","出货单号":"出货单号","配送方":"配送方","接收方":"接收方","其他key":"其他value"}
+	}
+
+##  设备维度所有报告信息接口 ##
+
+此API用于查询设备所有报告基本信息
+> POST
+
+	REQUEST:
+	POST
+	
+	HEADER:
+	TYPE: getReportByDevice
+	BODY:
+	{"snaddr":"W210NX01"}
+
+	RESPONSE:
+	{
+		"code":0,
+		"array":[
+			{
+				"report_id":"报告id",
+				"report_content": {"start_time":"2022-10-20 10:00:00","end_time":"2022-10-20 10:00:00","gap":"间隔分钟数","mode":"打印模式"},
+				"user_content":{"公司名称":"公司名称","货品名称":"货品名称","出货单号":"出货单号","配送方":"配送方","接收方":"接收方","其他key":"其他value"}
+			},
+			{
+				"report_id":"报告id",
+				"report_content": {"start_time":"2022-10-20 10:00:00","end_time":"2022-10-20 10:00:00","gap":"间隔分钟数","mode":"打印模式"},
+				"user_content":{"公司名称":"公司名称","货品名称":"货品名称","出货单号":"出货单号","配送方":"配送方","接收方":"接收方","其他key":"其他value"}
+			},
+		]
+
+	}
+
+##  获取报告详细数据接口 ##
+
+此API用于查询单条设备报告的详细数据内容
+> POST
+
+	REQUEST:
+	POST
+	
+	HEADER:
+	TYPE: getReportData
+	BODY:
+	{"snaddr":"W210NX01", "report_id":"程序自动生成的唯一报告id"}
+
+	RESPONSE:
+	{
+		"code":0,
+		"msg": "success",
+		"maxTemp":"最高温度"，
+		"minTemp"："最低温度"，
+		"maxHumi"："最大湿度"，
+		"minHumi"："最小湿度",
+		"dataCount": "数据条数",
+		"array":[
+			{"humi": { "value"："52.59","status":"-1"}, "temp": { "value"："25.59","status":"1"}, "time": "16-10-10 10:18"}
+			{"humi": { "value"："52.59","status":"-1"}, "temp": { "value"："25.59","status":"1"}, "time": "16-10-10 10:19"}
+			{"humi": { "value"："52.59","status":"-1"}, "temp": { "value"："25.59","status":"1"}, "time": "16-10-10 10:20"}
+			{"humi": { "value"："52.59","status":"-1"}, "temp": { "value"："25.59","status":"1"}, "time": "16-10-10 10:21"}
+		]
+	}
+
+接口描述 --- 返回数据内容字段参看 "实时温湿度获取" 接口
+
+
