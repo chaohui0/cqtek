@@ -732,6 +732,26 @@ abnormal具体含义定义:
 	成功 {"array": {"snaddr": "W21L7601", "humiHC": "1.00", "maxTemp": "38.00", "minTemp": "-20.00", "devName": "W21L7601", "nodeId": "W21L7101", "tempHC": "0.10", "maxHumi": "95.00", "minHumi": "5.00"}, "code": 0}
 	失败｛"code":1, "msg":"request failed"}
 
+
+## 查询报警充值帐户相关信息 ##
+
+调用此API，用户可以查询报警充值帐户相关信息。
+
+> POST
+
+	REQUEST:
+	POST
+	
+	HEADER:
+	TYPE: getAlarmAccountInfo
+	BODY:
+	{"accessToken":"token","user":"用户名"}
+	
+
+	RESPONSE:
+	成功 {"code":0,"credit_money":100,"msg_count":msg_count,"call_count":call_count,"msg_remain":剩余额度}
+
+
 ## 报警通道设置 ##
 
 调用此API，用户可以打开或关闭报警通道。
