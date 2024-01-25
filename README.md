@@ -142,7 +142,25 @@ HTTP Header中必须包含`Api-Key`和`Api-Domain`,其中`Api-Key`为企业超�
 	失败｛"code":1,"msg":"failed"｝
 	
 
+## 用户注册 ##
 
+调用此API，提交注册信息，成功，返回用户相关信息，若未绑定邮箱返回为空。
+
+> POST
+
+	REQUEST:
+	POST
+	
+	HEADER:
+	TYPE:  register
+	
+	BODY:
+	{"user":"xsf","password":"xx", "name":"xx", "qq":22222, "sex":"male", "phone":1112221, "email":"xx@ss.com"}
+
+	RESPONSE:
+	成功 {"code":0,"msg":"注册成功"}
+	失败｛"code":1,"msg":"failed"｝
+	
 
 
 ## 获取设备列表 ##
